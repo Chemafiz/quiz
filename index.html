@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>1 z Faferów</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>1 z Faferów</h1>
+        <a id="qr-link" class="top-link" href="qr.html">QR</a>
+      </header>
+
+      <section class="categories">
+        <h2>Kategorie</h2>
+        <div id="category-grid" class="grid"></div>
+      </section>
+
+      <section class="participants">
+        <h2>Uczestnicy</h2>
+        <div class="participants-table-wrap">
+          <table id="participants-table" class="participants-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Gracz</th>
+                <th id="points-header" style="cursor:pointer">Punkty ▲</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        
+        <div class="add-cta" style="margin-bottom:12px">
+          <a class="add-link" href="add_user.html">Dodaj uczestnika</a>
+        </div>
+      </section>
+    </main>
+
+    <button id="reset-all" class="secret-reset" title="Resetuj odpowiedzi (Shift+Click)"></button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "title": "matijas",
+  "version": 1,
+  "questions": [
+    {"title":"Pytanie1","text":"Ile waży kilogram wody?","answers":{"a":"0.5 kg","b":"1 kg","c":"2 kg","d":"10 kg"},"correct":"b","image":"img/q1.jpg"},
+    {"title":"Pytanie2","text":"Jaki jest kolor nieba w pogodny dzień?","answers":{"a":"Niebieski","b":"Czerwony","c":"Zielony","d":"Czarny"},"correct":"a","image":"img/q2.jpg"},
+    {"title":"Pytanie3","text":"Stolica Polski to?","answers":{"a":"Kraków","b":"Gdańsk","c":"Warszawa","d":"Poznań"},"correct":"c","image":"img/q3.jpg"}
+  ]
+}

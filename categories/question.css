@@ -1,0 +1,19 @@
+:root{--bg:#071021;--accent:#ff6b6b;--muted:#9aa4b2}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial;background:linear-gradient(180deg,#06101a,#07121a);color:#e9f3fb;min-height:100vh}
+.container{max-width:900px;margin:28px auto;padding:20px}
+.hero{display:flex;justify-content:space-between;align-items:center}
+.hero h1{font-size:28px;color:var(--accent);margin:0}
+.nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+.question{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px;margin-top:18px}
+.answers{margin-top:12px;display:grid;grid-template-columns:1fr;gap:8px}
+.answer{padding:12px;border-radius:8px;background:rgba(255,255,255,0.02);cursor:pointer}
+.answer.correct{background:rgba(34,197,94,0.18);border:1px solid rgba(34,197,94,0.3)}
+.answer.wrong{background:rgba(239,68,68,0.12)}
+.q-img{max-width:320px;border-radius:8px;margin-top:12px}
+
+/* Toggle/check button for question pages (1vs1) */
+.q-controls{display:flex;align-items:center;gap:8px;justify-content:flex-start;margin-top:12px}
+.btn-check{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--accent);padding:6px 10px;border-radius:8px;cursor:pointer;font-size:18px}
+.btn-check.active{background:rgba(34,197,94,0.16);border-color:rgba(34,197,94,0.3);color:#dfffe0}
+.btn-check:hover{transform:translateY(-1px)}

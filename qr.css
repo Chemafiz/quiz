@@ -1,0 +1,7 @@
+:root{--muted:#9aa4b2;--accent:#ff6b6b}
+body{font-family:Inter,Segoe UI,Arial;background:linear-gradient(180deg,#07121a,#081726);color:#eaf6ff;margin:0}
+.container{max-width:720px;margin:48px auto;padding:20px}
+h1{color:var(--accent)}
+.qr-placeholder{background:rgba(255,255,255,0.02);padding:20px;border-radius:10px;text-align:center}
+.qr-box{width:260px;height:260px;border-radius:8px;background:rgba(255,255,255,0.03);display:inline-flex;align-items:center;justify-content:center;margin:12px auto}
+.note{color:var(--muted);margin-top:12px}

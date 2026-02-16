@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pytanie</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1 id="cat-title">Pytanie</h1>
+        <div class="nav">
+          <a id="back-cat" href="#">Powrót do kategorii</a>
+          <a id="home" href="../index.html">Strona główna</a>
+        </div>
+      </header>
+
+      <article class="question">
+        <h2 id="q-title"></h2>
+        <p id="q-text"></p>
+        <div id="q-img-wrap"></div>
+        <div class="q-controls" style="display:none">
+          <button id="toggle-answered" class="btn-check" title="Odznacz/potwierdź pytanie">✓</button>
+        </div>
+        <div id="q-answers" class="answers"></div>
+      </article>
+    </main>
+
+    <script src="question.js"></script>
+  </body>
+</html>

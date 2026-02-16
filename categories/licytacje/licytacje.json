@@ -1,0 +1,11 @@
+{
+  "title": "Licytacje",
+  "version": 1,
+  "questions": [
+    { "title": "Ile wymienisz zwierząt na literę J" },
+    { "title": "Ile podasz państw zaczynających się na literę S" },
+    { "title": "Wymień jak najwięcej owoców w 30 sekund" },
+    { "title": "Ile nazwisk znanych sportowców potrafisz wymienić" },
+    { "title": "Ile narodowych potraw potrafisz wymienić" }
+  ]
+}
