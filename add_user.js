@@ -1,6 +1,19 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+import {
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
 
@@ -17,6 +30,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
+
+
+
+async function uploadAvatar(file) {
+  const fileRef = ref(storage, `avatars/${Date.now()}-${file.name}`);
+
+  await uploadBytes(fileRef, file);
+
+  const url = await getDownloadURL(fileRef);
+
+  return url;
+}
 
 async function readFileAsDataURL(file){
   return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); });
@@ -60,92 +86,63 @@ avatarFileEl?.addEventListener('change', async (e)=>{ const f = e.target.files &
 // debug disabled
 function appendDebug(){ /* no-op */ }
 
-document.getElementById('add-user-form').addEventListener('submit', async (e)=>{
-  // If the form element isn't found for some reason, attach to first form as fallback
-  const formEl = document.getElementById('add-user-form') || document.querySelector('form');
-  if(formEl && !formEl._hasSubmitHandler){
-    formEl._hasSubmitHandler = true; // mark to avoid double attach
-  } else if(!formEl){ appendDebug('No form element found on page'); }
-  // (handler continues)
+document.getElementById("add-user-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const avatarUrl = avatarUrlEl ? avatarUrlEl.value.trim() : '';
-  const avatarFile = (avatarFileEl && avatarFileEl.files) ? avatarFileEl.files[0] : null;
-  // always log initial submit attempt so user sees something in debug panel
-  appendDebug('Submit attempt', { name: name || '<empty>', hasFile: !!avatarFile, fileSize: avatarFile? avatarFile.size : 0, avatarUrlProvided: !!avatarUrl });
-  if(!name) return showMsg('Wpisz imię lub nick', false);
 
-  let avatar = '';
-  // prefer uploaded file over URL (user requested no-URL); use URL only if no file
-  if(avatarFile){
-    appendDebug('Using uploaded file', { name: avatarFile.name, size: avatarFile.size, type: avatarFile.type });
-  } else if(avatarUrl){
-    appendDebug('No file uploaded; falling back to avatar URL');
-  }
-  if(avatarUrl && !avatarFile) avatar = avatarUrl;
-  else if(avatarFile){
-    if(!avatarFile.type || !avatarFile.type.startsWith('image/')){
-      showMsg('Wybrany plik nie jest obrazem.', false); return;
-    }
-    // try to resize/compress large images to avoid localStorage quota errors
-    try{
-      // helper to compute approximate byte size of a base64 data URL
-      function dataUrlByteSize(dataUrl){
-        if(!dataUrl) return 0;
-        const comma = dataUrl.indexOf(',');
-        const b64 = comma >= 0 ? dataUrl.slice(comma+1) : dataUrl;
-        const padding = (b64.endsWith('==')?2:(b64.endsWith('=')?1:0));
-        return Math.ceil((b64.length * 3) / 4) - padding;
-      }
+  const name = document.getElementById("name").value.trim();
+  const avatarFile = avatarFileEl.files[0];
 
-      // try several qualities/dimensions to get a reasonable size
-      const tryCompress = async (file)=>{
-        const dims = [512, 420, 360, 300];
-        const quals = [0.8, 0.7, 0.6, 0.5, 0.45, 0.4];
-        for(const d of dims){
-          for(const q of quals){
-            try{
-              const candidate = await resizeImageFile(file, d, q);
-              const size = dataUrlByteSize(candidate);
-              console.log('Compress attempt', {d,q,size});
-              // prefer small enough < 300KB, otherwise continue trying
-              if(size <= 300 * 1024) return candidate;
-              // keep best candidate (smallest)
-              if(!tryCompress.best || size < tryCompress.bestSize){ tryCompress.best = candidate; tryCompress.bestSize = size; }
-            }catch(e){ console.warn('compress attempt failed', e); }
-          }
-        }
-        return tryCompress.best || null;
-      };
+  if (!name) return showMsg("Wpisz nick!", false);
+  if (!avatarFile) return showMsg("Dodaj zdjęcie!", false);
 
-      const compressed = await tryCompress(avatarFile);
-      if(compressed){ avatar = compressed; appendDebug('Compression produced candidate'); }
-      else {
-        // last resort: raw data URL
-        avatar = await readFileAsDataURL(avatarFile);
-        appendDebug('Compression not sufficient; using raw dataURL');
-      }
-      // log sizes
-      try{ appendDebug('Avatar original bytes', avatarFile.size, 'result bytes approx', dataUrlByteSize(avatar)); }catch(e){}
-    }catch(err){
-      console.warn('Resize failed, falling back to raw data URL', err);
-      try{ avatar = await readFileAsDataURL(avatarFile); }catch(err2){ console.error('Failed to read avatar file', err2); showMsg('Nie udało się odczytać pliku obrazu.', false); return; }
-    }
-  }
+  showMsg("Wysyłam...", true);
 
-  const payload = { name, avatar, points: 0 };
-
-  // save to Firebase Firestore
   try {
+    // 1. Upload zdjęcia do Storage
+    const avatarURL = await uploadAvatar(avatarFile);
+
+    // 2. Zapis do Firestore
+    const payload = {
+      name,
+      avatar: avatarURL,
+      points: 0
+    };
+
     await addDoc(collection(db, "participants"), payload);
 
-    showMsg("Witam w grze!", true);
+    showMsg("Dodano uczestnika!", true);
     document.getElementById("add-user-form").reset();
 
+    // odśwież listę
+    loadParticipants();
+
   } catch (err) {
-    console.error("Firebase save error", err);
-    showMsg("Nie udało się zapisać usera", false);
+    console.error(err);
+    showMsg("Błąd zapisu do Firebase", false);
   }
 });
+
+async function loadParticipants() {
+  const listEl = document.getElementById("participants-list");
+  listEl.innerHTML = "";
+
+  const snapshot = await getDocs(collection(db, "participants"));
+
+  snapshot.forEach((doc) => {
+    const user = doc.data();
+
+    const div = document.createElement("div");
+    div.className = "user-card";
+
+    div.innerHTML = `
+      <img src="${user.avatar}" />
+      <span>${user.name}</span>
+    `;
+
+    listEl.appendChild(div);
+  });
+}
+
+loadParticipants();
 
 
