@@ -1,3 +1,26 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCQMW1MeMF27VSvc6DqnVnZCIr9mYcSsuw",
+  authDomain: "quiz-8b915.firebaseapp.com",
+  projectId: "quiz-8b915",
+  storageBucket: "quiz-8b915.firebasestorage.app",
+  messagingSenderId: "312998480487",
+  appId: "1:312998480487:web:acf418cfbacfb6a418e2c2",
+  measurementId: "G-DLZB3DQTD6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const analytics = getAnalytics(app);
+
+
+
 async function readFileAsDataURL(file){
   return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); });
 }
@@ -115,31 +138,17 @@ document.getElementById('add-user-form').addEventListener('submit', async (e)=>{
 
   const payload = { name, avatar, points: 0 };
 
-  // save to localStorage (works on GitHub Pages)
-  try{
-    const list = JSON.parse(localStorage.getItem('participants')||'[]');
-    list.push(payload);
-    try{
-      // show debug sizes in console before saving
-      try{
-        const totalLocal = Object.keys(localStorage).reduce((acc,k)=>acc + (localStorage.getItem(k)||'').length, 0);
-        const avatarSize = (payload.avatar && payload.avatar.indexOf('data:')===0) ? (function(){ const comma = payload.avatar.indexOf(','); const b64 = payload.avatar.slice(comma+1); const padding = (b64.endsWith('==')?2:(b64.endsWith('=')?1:0)); return Math.ceil((b64.length * 3)/4)-padding; })() : 0;
-        appendDebug('Saving participant, approx sizes bytes', { totalLocal, avatarSize });
-      }catch(e){ appendDebug('size calc failed', e); }
-      localStorage.setItem('participants', JSON.stringify(list));
-    }catch(quotaErr){
-      appendDebug('Quota exceeded when saving participant', quotaErr);
-      // try to provide helpful diagnostics
-      let curStorage = 0; try{ curStorage = Object.keys(localStorage).reduce((acc,k)=>acc + (localStorage.getItem(k)||'').length, 0); }catch(e){}
-      let avatarBytes = 0; try{ if(payload.avatar && payload.avatar.indexOf('data:')===0){ const comma = payload.avatar.indexOf(','); const b64 = payload.avatar.slice(comma+1); const padding = (b64.endsWith('==')?2:(b64.endsWith('=')?1:0)); avatarBytes = Math.ceil((b64.length * 3)/4)-padding; } }catch(e){}
-      showMsg('Nie udało się dodać: brak miejsca w przeglądarce. Avatar ~'+Math.round(avatarBytes/1024)+'KB, localStorage użyte ~'+Math.round(curStorage/1024)+'KB', false);
-      appendDebug('Diagnostics', { curStorageBytes: curStorage, avatarApproxBytes: avatarBytes });
-      return;
-    }
-    showMsg('Witam w grze!', true);
-    document.getElementById('add-user-form').reset();
-    console.log('Added participant', payload);
-  }catch(e){ console.error('Failed to save participant', e); showMsg('Nie udało się dodać: '+(e && e.message ? e.message : ''), false); }
+  // save to Firebase Firestore
+  try {
+    await addDoc(collection(db, "participants"), payload);
+
+    showMsg("Witam w grze!", true);
+    document.getElementById("add-user-form").reset();
+
+  } catch (err) {
+    console.error("Firebase save error", err);
+    showMsg("Nie udało się zapisać usera", false);
+  }
 });
 
-// debug disabled; no startup log
+
