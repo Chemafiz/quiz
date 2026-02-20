@@ -5,12 +5,6 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-function showMsg(text, ok = true) {
-  const el = document.getElementById("msg");
-  el.textContent = text;
-  el.style.color = ok ? "#9ae6b4" : "#ff9aa2";
-}
-
 const avatarPreview = document.getElementById("avatar-preview");
 const avatarFileEl = document.getElementById("avatar-file");
 
@@ -21,12 +15,16 @@ avatarFileEl.addEventListener("change", (e) => {
   avatarPreview.style.display = "block";
 });
 
+function showMsg(text, ok = true) {
+  const el = document.getElementById("msg");
+  el.textContent = text;
+  el.style.color = ok ? "#9ae6b4" : "#ff9aa2";
+}
+
 document.getElementById("add-user-form").addEventListener("submit", async (e) => {
   e.preventDefault();
-
   const name = document.getElementById("name").value.trim();
   const file = avatarFileEl.files[0];
-
   if (!name) return showMsg("Wpisz nick!", false);
   if (!file) return showMsg("Dodaj zdjęcie!", false);
 
@@ -35,37 +33,25 @@ document.getElementById("add-user-form").addEventListener("submit", async (e) =>
   try {
     const fileName = `${Date.now()}-${file.name}`;
 
-    // 1️⃣ Upload do storage
+    // Upload do storage
     const { error: uploadError } = await supabase.storage
       .from("avatars")
       .upload(fileName, file);
-
     if (uploadError) throw uploadError;
 
-    // 2️⃣ Pobierz publiczny URL
-    const { data } = supabase.storage
-      .from("avatars")
-      .getPublicUrl(fileName);
-
+    // Pobierz publiczny URL
+    const { data } = supabase.storage.from("avatars").getPublicUrl(fileName);
     const avatarURL = data.publicUrl;
 
-    // 3️⃣ Zapis do bazy 
-    const { error: insertError } = await supabase
-      .from("participants")
-      .insert([
-        {
-          name: name,
-          avatar_url: avatarURL,
-          points: 0
-        }
-      ]);
-
+    // Insert do bazy
+    const { error: insertError } = await supabase.from("participants").insert([
+      { name, avatar_url: avatarURL }
+    ]);
     if (insertError) throw insertError;
 
     showMsg("Dodano uczestnika!");
     document.getElementById("add-user-form").reset();
     avatarPreview.style.display = "none";
-
   } catch (err) {
     console.error(err);
     showMsg("Błąd zapisu!", false);

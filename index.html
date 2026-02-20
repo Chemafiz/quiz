@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>1 z Faferów</title>
-    <!-- Inline SVG favicon to avoid browser 404 requests for /favicon.ico -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232b6cb0'/%3E%3Ctext x='50' y='62' font-size='60' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EQ%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -26,24 +24,22 @@
           <table id="participants-table" class="participants-table">
             <thead>
               <tr>
-                <th></th>
+                <th>Avatar</th>
                 <th>Gracz</th>
-                <th id="points-header" style="cursor:pointer">Punkty ▲</th>
-                <th></th>
-                <th></th>
+                <th>Punkty</th>
+                <th>Wizualizacja</th>
+                <th>Akcje</th>
               </tr>
             </thead>
             <tbody></tbody>
           </table>
         </div>
-        
         <div class="add-cta" style="margin-bottom:12px">
           <a class="add-link" href="add_user.html">Dodaj uczestnika</a>
         </div>
+        <button id="delete-all" class="secret-reset">Usuń wszystkich uczestników</button>
       </section>
     </main>
-
-    <button id="reset-all" class="secret-reset" title="Resetuj odpowiedzi (Shift+Click)"></button>
     <script type="module" src="script.js"></script>
   </body>
 </html>
