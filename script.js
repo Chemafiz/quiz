@@ -1,4 +1,40 @@
-// categories list will be loaded from `categories/index.json` (array of slugs)
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+const SUPABASE_URL = "https://gwxqmnrukgnffwqsxytp.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3eHFtbnJ1a2duZmZ3cXN4eXRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MTU0MTcsImV4cCI6MjA4NzE5MTQxN30.XdrNfQqSC-r7IVI-I17shvdkiDuZZ631FedMIZ571Uw";
+
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+async function loadParticipants() {
+  const { data, error } = await supabase
+    .from("participants")
+    .select("*")
+    .order("points", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  const tbody = document.querySelector("#participants-table tbody");
+  tbody.innerHTML = "";
+
+  data.forEach(user => {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+      <td><img src="${user.avatar_url}" style="width:32px;height:32px;border-radius:50%"></td>
+      <td>${user.name}</td>
+      <td>${user.points}</td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+}
+
+loadParticipants();
+
 let categories = [];
 
 async function loadCategoryList(){
