@@ -59,62 +59,7 @@ async function init(){
     grid.appendChild(link);
   });
   // --- special 1vs1 duel UI ---
-  if(slug === '1vs1'){
-    const questionsSection = document.querySelector('.questions');
-    const duel = document.createElement('div');
-    duel.className = 'duel';
-    duel.innerHTML = `
-      <div class="duel-row">
-        <div class="duel-slot" id="duel-slot1"><img class="duel-avatar" src="" alt="avatar"><div class="duel-name"></div></div>
-        <div class="duel-vs">VS</div>
-        <div class="duel-slot" id="duel-slot2"><img class="duel-avatar" src="" alt="avatar"><div class="duel-name"></div></div>
-      </div>
-      <div class="duel-controls">
-        <button id="duel-pick1" class="duel-btn">Losuj 1</button>
-        <button id="duel-pick2" class="duel-btn">Losuj 2</button>
-        <button id="duel-clear" class="duel-btn duel-clear">Wyczyść</button>
-      </div>
-    `;
-    // place duel UI at the end of the document body so it appears lower and centered
-    document.body.appendChild(duel);
 
-    function getParticipants(){ return JSON.parse(localStorage.getItem('participants')||'[]'); }
-    function displaySlot(slotId, p){
-      const slot = document.getElementById(slotId);
-      const img = slot.querySelector('.duel-avatar');
-      const name = slot.querySelector('.duel-name');
-      if(!p){ img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="64" height="64" fill="#333"/></svg>'; name.textContent = ''; }
-      else { img.src = p.avatar || 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><rect width="64" height="64" fill="#556"/></svg>'; name.textContent = p.name; }
-    }
-
-    function pickRandom(exclude){
-      const list = getParticipants();
-      if(!list.length) return null;
-      const pool = list.filter(p => !exclude || !(p.name===exclude.name && p.avatar===exclude.avatar));
-      if(!pool.length) return null;
-      return pool[Math.floor(Math.random()*pool.length)];
-    }
-
-    // wire buttons
-    q('#duel-pick1').addEventListener('click', ()=>{
-      const pick = pickRandom();
-      if(!pick){ alert('Brak uczestników do wylosowania'); return; }
-      displaySlot('duel-slot1', pick);
-    });
-    q('#duel-pick2').addEventListener('click', ()=>{
-      const slot1 = document.getElementById('duel-slot1');
-      const name1 = slot1.querySelector('.duel-name').textContent || null;
-      const avatar1 = slot1.querySelector('.duel-avatar').src || null;
-      const exclude = name1 ? { name: name1, avatar: avatar1 } : null;
-      const pick = pickRandom(exclude);
-      if(!pick){ alert('Brak dostępnych uczestników (wykluczono już wybranego)'); return; }
-      displaySlot('duel-slot2', pick);
-    });
-    q('#duel-clear').addEventListener('click', ()=>{ displaySlot('duel-slot1', null); displaySlot('duel-slot2', null); });
-
-    // initialize empty slots
-    displaySlot('duel-slot1', null); displaySlot('duel-slot2', null);
-  }
   // attach per-category reset button behavior
   const resetBtn = document.getElementById('cat-reset');
   if(resetBtn){

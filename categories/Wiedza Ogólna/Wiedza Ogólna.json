@@ -1,0 +1,234 @@
+{
+  "title": "Francus",
+  "version": 1,
+  "questions": [
+    {
+      "title": "Pytanie1",
+      "text": "Jaki gen odpowiada za rudość Francka?",
+      "answers": {
+        "a": "FR67",
+        "b": "MC1R",
+        "c": "CBR1",
+        "d": "RD91"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+    {
+      "title": "Pytanie2",
+      "text": "Jaka substancja chemiczna w największym stopniu odpowiada za charakterystyczny smak ginu?",
+      "answers": {
+        "a": "Linalol",
+        "b": "Eugenol",
+        "c": "α-pinen",
+        "d": "Juniperol"
+      },
+      "correct": "c",
+      "image": "img/2.jpg"
+    },
+    {
+      "title": "Pytanie3",
+      "text": "Francek szedł 9.5 km do Raszczyc. W jakim czasie przebiegłby ten dystans rekordzista świata w maratonie Kelvin Kiptum przy tempie z rekordu świata?",
+      "answers": {
+        "a": "21 min 54 s",
+        "b": "26 min 54 s",
+        "c": "37 min 9 s",
+        "d": "45 min 18 s"
+      },
+      "correct": "b",
+      "image": "img/3.jpg"
+    },
+    {
+      "title": "Pytanie4",
+      "text": "Jakie stężenie siarkowodoru w kiblu Matiego byłoby niebezpieczne dla zdrowia człowieka?",
+      "answers": {
+        "a": "0.01 ppm",
+        "b": "1 ppm",
+        "c": "50 ppm",
+        "d": "0.001 ppm"
+      },
+      "correct": "c",
+      "image": "img/4.jpg"
+    },
+    {
+      "title": "Pytanie5",
+      "text": "Co to za drzewo obok ogniska?",
+      "answers": {
+        "a": "Jarząb",
+        "b": "Leszczyna",
+        "c": "Topola",
+        "d": "Kasztanowiec"
+      },
+      "correct": "b",
+      "image": "img/5.jpg"
+    },
+    {
+      "title": "Pytanie6",
+      "text": "Jak nazywa się choroba, w której może dojść do przestania działania lewej półkuli mózgu?",
+      "answers": {
+        "a": "Alzheimer",
+        "b": "Stwardnienie rozsiane",
+        "c": "Udar mózgu",
+        "d": "Toksoplazmoza"
+      },
+      "correct": "c",
+      "image": "img/6.jpg"
+    },
+    {
+      "title": "Pytanie7",
+      "text": "Jaki jest główny minerał, z którego zbudowana jest Góra Miedzianka?",
+      "answers": {
+        "a": "Galena",
+        "b": "Piryt",
+        "c": "Chalkopiryt",
+        "d": "Ferrochromit"
+      },
+      "correct": "c",
+      "image": "img/7.jpg"
+    },
+    {
+      "title": "Pytanie8",
+      "text": "Bojler ma 60 l wody o temperaturze 10°C. Grzałka ma moc 2000 W. Ile czasu zajmie podgrzanie wody do 100°C?",
+      "answers": {
+        "a": "2h 05min",
+        "b": "3h 15min",
+        "c": "1h 48min",
+        "d": "4h 40min"
+      },
+      "correct": "b",
+      "image": "img/8.jpg"
+    },
+    {
+      "title": "Pytanie9",
+      "text": "Jak zapisać 'Faferloki' po japońsku używając alfabetu katakana?",
+      "answers": {
+        "a": "ファフェルロキ",
+        "b": "ハフェルロキ",
+        "c": "ファフェロキ",
+        "d": "ファフェルロギ"
+      },
+      "correct": "a",
+      "image": "img/9.jpg"
+    },
+    {
+      "title": "Pytanie10",
+      "text": "Kiedy zazwyczaj rozpoczyna się turniej French Open?",
+      "answers": {
+        "a": "W pierwszej połowie maja",
+        "b": "Pod koniec maja",
+        "c": "Na początku lipca",
+        "d": "W połowie kwietnia"
+      },
+      "correct": "b",
+      "image": "img/10.jpg"
+    },
+    {
+      "title": "Pytanie11",
+      "text": "Co najczęściej produkuje się z serwatki mleka?",
+      "answers": {
+        "a": "Odżywki proteinowe",
+        "b": "Granulat dla Francków",
+        "c": "Śmietanę",
+        "d": "Ser Cheddar"
+      },
+      "correct": "a",
+      "image": "img/11.jpg"
+    },
+    {
+      "title": "Pytanie12",
+      "text": "Ile podstawowych rodzajów głosów wyróżnia się w klasycznym chórze mieszanym?",
+      "answers": {
+        "a": "6",
+        "b": "3",
+        "c": "4",
+        "d": "8"
+      },
+      "correct": "c",
+      "image": "img/12.jpg"
+    },
+    {
+      "title": "Pytanie13",
+      "text": "Jaki gatunek muzyczny reprezentuje muzyka dla ślimaków?",
+      "answers": {
+        "a": "DnB",
+        "b": "Muzyka klasyczna",
+        "c": "Electro",
+        "d": "Minimal Tech"
+      },
+      "correct": "d",
+      "image": "img/13.jpg"
+    },
+    {
+      "title": "Pytanie14",
+      "text": "Do jakiego gatunku należy największy penis w świecie zwierząt zaraz po Adim?",
+      "answers": {
+        "a": "Słoń afrykański",
+        "b": "Płetwal błękitny",
+        "c": "Koń domowy",
+        "d": "Mors"
+      },
+      "correct": "b",
+      "image": "img/14.jpg"
+    },
+    {
+      "title": "Pytanie15",
+      "text": "Ile hektarów ma to pole za domkiem w Wólce?",
+      "answers": {
+        "a": "2.1 ha",
+        "b": "7.8 ha",
+        "c": "4.5 ha",
+        "d": "12 ha"
+      },
+      "correct": "c",
+      "image": "img/15.jpg"
+    },
+    {
+      "title": "Pytanie16",
+      "text": "Jakiej kategorii glebowej jest ziemia wokół Żytnej?",
+      "answers": {
+        "a": "4",
+        "b": "2",
+        "c": "6",
+        "d": "3"
+      },
+      "correct": "c",
+      "image": "img/16.jpg"
+    },
+    {
+      "title": "Pytanie17",
+      "text": "Ile hot dogów w ciągu 10 minut zjadł Joey Chestnut, amerykański mistrz w sztuce szybkiego pochłaniania?",
+      "answers": {
+        "a": "52",
+        "b": "40",
+        "c": "76",
+        "d": "21"
+      },
+      "correct": "c",
+      "image": "img/17.jpg"
+    },
+    {
+      "title": "Pytanie18",
+      "text": "Ile kosztuje najdroższa wódka świata 'Billionaire Vodka'?",
+      "answers": {
+        "a": "3,7 mln dolarów",
+        "b": "12 mln dolarów",
+        "c": "1,2 mln dolarów",
+        "d": "500 tys. dolarów"
+      },
+      "correct": "a",
+      "image": "img/18.jpg"
+    },
+    {
+      "title": "Pytanie19",
+      "text": "Jakimi słowami zaczyna się Nowy Testament (Ewangelia wg św. Mateusza)?",
+      "answers": {
+        "a": "Na początku było Słowo",
+        "b": "Księga Rodzaju Jezusa Chrystusa, syna Dawida, syna Abrahama",
+        "c": "W owej chwili przyszedł Jezus z Nazaretu w Galilei i został ochrzczony przez Jana w Jordanie",
+        "d": "Bóg stworzył niebo i ziemię"
+      },
+      "correct": "b",
+      "image": "img/19.jpg"
+    }
+  ]
+}

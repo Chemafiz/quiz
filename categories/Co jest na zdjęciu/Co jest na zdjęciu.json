@@ -1,0 +1,58 @@
+{
+  "title": "Co jest na zdjęciu",
+  "version": 1,
+  "questions": [
+    {
+      "title": "Pytanie 1",
+      "text": "Jakie piwo trzyma Natalia?",
+      "answers": {
+        "a": "Łomża Miodowa",
+        "b": "Perła Miodowa",
+        "c": "Desperados",
+        "d": "Tyskie Białe"
+      },
+      "correct": "a",
+      "blur_image": "img/blur1.jpg",
+      "clear_image": "img/clear1.jpg"
+    },
+    {
+      "title": "Pytanie 2",
+      "text": "Jakie to piwo",
+      "answers": {
+        "a": "Helles",
+        "b": "Budweiser",
+        "c": "Veldensteiner",
+        "d": "Augustiner"
+      },
+      "correct": "c",
+      "blur_image": "img/blur2.jpg",
+      "clear_image": "img/clear2.jpg"
+    },
+    {
+      "title": "Pytanie 3",
+      "text": "Jakie piwo kradnie ten menel?",
+      "answers": {
+        "a": "Tyskie",
+        "b": "Kozel Ležák",
+        "c": "Zamkowe",
+        "d": "Kozel černý"
+      },
+      "correct": "d",
+      "blur_image": "img/blur3.jpg",
+      "clear_image": "img/clear3.jpg"
+    },
+    {
+      "title": "Pytanie 4",
+      "text": "Jakie piwo trzyma Łukasz?",
+      "answers": {
+        "a": "Kozel Ležák",
+        "b": "Zamkowe",
+        "c": "Kasztelan niepasteryzowany",
+        "d": "Radler Cytrynowy 0.0%"
+      },
+      "correct": "c",
+      "blur_image": "img/blur4.jpg",
+      "clear_image": "img/clear4.jpg"
+    }
+  ]
+}

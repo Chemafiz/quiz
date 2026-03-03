@@ -67,9 +67,7 @@ async function init(){
         const idx = arr.indexOf(qidx);
         if(idx >= 0){ arr.splice(idx,1); } else { arr.push(qidx); }
         localStorage.setItem(key, JSON.stringify(arr));
-        // notify other tabs/pages
         try{ localStorage.setItem('answered_signal', String(Date.now())); }catch(e){}
-        // update opener (category grid) if present
         try{
           if(window.opener && !window.opener.closed){
             const sel = `a.q-card[data-q="${qidx}"]`;
@@ -81,78 +79,109 @@ async function init(){
       updateToggleBtn();
     });
   }
-  // ensure initial state is reflected
   updateToggleBtn();
 
-  // Mark this question as answered on view (unified behavior)
+  // Mark this question as answered on view
   try{
     const key = answeredKey(slug);
     const arr = JSON.parse(localStorage.getItem(key)||'[]');
     if(!arr.includes(qidx)){
       arr.push(qidx);
       localStorage.setItem(key, JSON.stringify(arr));
-      // notify other tabs/pages
       try{ localStorage.setItem('answered_signal', String(Date.now())); }catch(e){}
-      // try to update opener category page immediately (if opened from there)
       try{
         if(window.opener && !window.opener.closed){
           const sel = `a.q-card[data-q="${qidx}"]`;
           const el = window.opener.document.querySelector(sel);
           if(el){ el.classList.add('answered'); }
         }
-      }catch(e){ /* ignore cross-origin */ }
+      }catch(e){ }
     }
-  }catch(e){ /* ignore storage errors */ }
+  }catch(e){ }
 
+  // image handling
   const imgWrap = $q('#q-img-wrap'); imgWrap.innerHTML='';
-  if(qt.image){ const img = document.createElement('img'); img.className='q-img'; img.src = qt.image; img.onerror = ()=>{ img.style.display='none'; }; imgWrap.appendChild(img); }
+  // in case an old cached page still tries to call checkAndSet, provide a no-op stub
+  function checkAndSet(src){
+    // simply set directly (same behavior as before cache-bust)
+    const img = document.createElement('img');
+    img.className = 'q-img';
+    img.src = encodeURI(src);
+    img.onerror = () => { img.style.display = 'none'; };
+    imgWrap.appendChild(img);
+  }
+  const specialSlug = 'Co jest na zdjęciu';
+  const isBlurCategory = slug === specialSlug;
+  if(isBlurCategory){
+    let src = qt.blur_image || qt.image;
+    if(src){
+      if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
+        src = `./${slug}/${src}`;
+      }
+      const img = document.createElement('img');
+      img.className = 'q-img';
+      img.src = encodeURI(src);
+      img.onerror = () => { img.style.display = 'none'; };
+      imgWrap.appendChild(img);
+    }
+  } else if(qt.image){
+    let src = qt.image;
+    if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
+      src = `./${slug}/${src}`;
+    }
+    const img = document.createElement('img');
+    img.className = 'q-img';
+    img.src = encodeURI(src);
+    img.onerror = () => { img.style.display = 'none'; };
+    imgWrap.appendChild(img);
+  }
 
+  // answers
   const answersWrap = $q('#q-answers'); answersWrap.innerHTML='';
   const keys = Object.keys(qt.answers || {});
   const correctKey = qt.correct || keys[0];
-
   keys.forEach(k=>{
     const el = document.createElement('div'); el.className='answer'; el.textContent = `${k.toUpperCase()}: ${qt.answers[k]}`;
     el.addEventListener('click', ()=>{
-      if(el._answered) return; // prevent double-click
+      if(el._answered) return;
       el._answered = true;
       if(k === correctKey) el.classList.add('correct'); else el.classList.add('wrong');
-      // reveal correct
       Array.from(document.querySelectorAll('.answer')).forEach(a=>{
         if(a !== el && a.textContent.startsWith((correctKey||'').toUpperCase())) a.classList.add('correct');
       });
-      // persist answered state for this question
       const arr = JSON.parse(localStorage.getItem(answeredKey(slug))||'[]');
       if(!arr.includes(qidx)) arr.push(qidx);
       localStorage.setItem(answeredKey(slug), JSON.stringify(arr));
-      // notify other tabs/pages immediately
       try{ localStorage.setItem('answered_signal', String(Date.now())); }catch(e){}
-      // if this page was opened from the category page (opener), try to update it directly
       try{
         if(window.opener && !window.opener.closed){
           const sel = `a.q-card[href*="q=${qidx}"]`;
-          const el = window.opener.document.querySelector(sel);
-          if(el){ el.classList.add('answered'); el.classList.add('disabled'); }
+          const el2 = window.opener.document.querySelector(sel);
+          if(el2){ el2.classList.add('answered'); el2.classList.add('disabled'); }
         }
-      }catch(e){ /* ignore cross-origin or other errors */ }
-      // do not redirect automatically; let host navigate back manually
+      }catch(e){}
+      if(isBlurCategory && qt.clear_image){
+        let src = qt.clear_image;
+        if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
+          src = `./${slug}/${src}`;
+        }
+        const img = imgWrap.querySelector('img');
+        if(img) img.src = encodeURI(src);
+      }
     });
     answersWrap.appendChild(el);
   });
 }
 
-// listen for storage changes (reset from main page or other tabs)
 window.addEventListener('storage', (e)=>{
   if(!e.key) return;
   const params = getParams();
   const slug = params.get('slug') || 'kategoria-1';
   if(e.key === 'reset_signal'){
-    // clear answer styles without reload
     document.querySelectorAll('.answer.correct, .answer.wrong').forEach(el=>{ el.classList.remove('correct','wrong'); el._answered = false; });
     return;
   }
   if(e.key.startsWith('answered_') || e.key === `category_hash_${slug}` || e.key === `category_version_${slug}`){
-    // reload page so visual answer marks are cleared/reset
     location.reload();
   }
 });
