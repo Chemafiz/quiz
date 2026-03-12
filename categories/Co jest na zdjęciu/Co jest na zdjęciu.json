@@ -53,6 +53,97 @@
       "correct": "c",
       "blur_image": "img/blur4.jpg",
       "clear_image": "img/clear4.jpg"
-    }
+    },
+    {
+      "title": "Pytanie 5",
+      "text": "Co trzyma Kamil w ręce?",
+      "answers": {
+        "a": "Pusta flacha Żóbrówki",
+        "b": "2 vape'y",
+        "c": "Pusta butelka i paczka czipsów z puszką w środku",
+        "d": "Fiut Francka"
+      },
+      "correct": "c",
+      "blur_image": "img/blur5.jpg",
+      "clear_image": "img/clear5.jpg"
+    },
+    {
+      "title": "Pytanie 6",
+      "text": "Co trzyma Natalia w ręce?",
+      "answers": {
+        "a": "Zestaw grillowy karkówek, dwa papiery toaletowe i 2 jajka",
+        "b": "karton jajek 30 sztuk, 2 paczki chipsów, kabanosy tarczyński wieprzowe",
+        "c": "Karton energoli black, 2 paczki tortilli pszennych",
+        "d": "dwie paczki kiełbach śląskich, ser Halloumi, rolka papieru toaletowego"
+      },
+      "correct": "a",
+      "blur_image": "img/blur6.jpg",
+      "clear_image": "img/clear6.jpg"
+    },
+    {
+      "title": "Pytanie 7",
+      "text": "Co ma napisane Francek na ręce?",
+      "answers": {
+        "a": "CWEL",
+        "b": "JELEŃ",
+        "c": "ANDY",
+        "d": "RUDY 102"
+      },
+      "correct": "b",
+      "blur_image": "img/blur7.jpg",
+      "clear_image": "img/clear7.jpg"
+    },
+    {
+      "title": "Pytanie 8",
+      "text": "Co mati trzyma w ogrodzie?",
+      "answers": {
+        "a": "pralka",
+        "b": "betoniarka",
+        "c": "stolik a na nim klatki z królikami",
+        "d": "grill i na nim położona ta taka wanienka, w której się krew świnii zbierało albo pranie robiło"
+      },
+      "correct": "a",
+      "blur_image": "img/blur8.jpg",
+      "clear_image": "img/clear8.jpg"
+    },
+    {
+      "title": "Pytanie 9",
+      "text": "Które urodziny Szymona świętowaliśmy wtedy?",
+      "answers": {
+        "a": "21",
+        "b": "22",
+        "c": "23",
+        "d": "to nie były urodziny Szymona"
+      },
+      "correct": "b",
+      "blur_image": "img/blur9.jpg",
+      "clear_image": "img/clear9.jpg"
+    },
+    {
+      "title": "Pytanie 10",
+      "text": "Co to jest?",
+      "answers": {
+        "a": "Bols",
+        "b": "Soplica Wiśniowa",
+        "c": "Tymbnark Jabłko-mięta",
+        "d": "Sok mandarynka Riviva Łyk Radości 100%"
+      },
+      "correct": "d",
+      "blur_image": "img/blur10.jpg",
+      "clear_image": "img/clear10.jpg"
+    },
+    {
+      "title": "Pytanie 11",
+      "text": "Co jest pod choinką Adiego?",
+      "answers": {
+        "a": "Geszenk",
+        "b": "Piesek śpi",
+        "c": "nic",
+        "d": "rozjebana bombka"
+      },
+      "correct": "c",
+      "blur_image": "img/blur11.jpg",
+      "clear_image": "img/clear11.jpg"
+    },
   ]
 }

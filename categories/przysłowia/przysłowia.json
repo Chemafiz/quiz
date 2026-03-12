@@ -1,0 +1,150 @@
+{
+  "title": "Przysłowia",
+  "version": 1,
+  "questions": [
+    {
+      "title": "Przysłowie1",
+      "text": "Na św. Franciszka zielenią się łany i ...",
+      "answers": {
+        "a": "lenią barany",
+        "b": "trzaskają cygany",
+        "c": "ze swego zimowiska wracają bociany",
+        "d": "wychodzą z lasów fazany"
+      },
+      "correct": "c",
+      "image": "img/1.jpeg"
+    },
+        {
+      "title": "Przysłowie2",
+      "text": "Żebro Adamowe nie przynosi ...",
+      "answers": {
+        "a": "szczęścia i zdrowia",
+        "b": "Ewy z jabłkiem",
+        "c": "ciepło domowe i sąsiadów zgodę",
+        "d": "tak wiele pożytku jak szkody"
+      },
+      "correct": "d",
+      "image": "img/1.jpeg"
+    },
+        {
+      "title": "Przysłowie3",
+      "text": "Gdy w dzień Adama i Ewy mróz i pięknie, ...",
+      "answers": {
+        "a": "zima wcześnie pęknie",
+        "b": "lody trzaskają ponętnie",
+        "c": "wiosna nadejdzie czym prętkiej",
+        "d": "zlezie dziadek ze strychu z pościelą"
+      },
+      "correct": "a",
+      "image": "img/1.jpeg"
+    },
+        {
+      "title": "Przysłowie4",
+      "text": "Trzej najlepsi lekarze: dr Spokój, dr Dieta i ...",
+      "answers": {
+        "a": "dr Żona",
+        "b": "dr Pieniądz",
+        "c": "dr Kuj",
+        "d": "dr Humor"
+      },
+      "correct": "d",
+      "image": "img/1.jpeg"
+    },
+        {
+      "title": "Przysłowie5",
+      "text": "... ale kija z ręki nie puszczaj",
+      "answers": {
+        "a": "Trzymaj rusa",
+        "b": "Psa głaskaj",
+        "c": "Miel mąkę",
+        "d": "Bij Matiego"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+         {
+      "title": "Przysłowie6",
+      "text": "Pan Bóg stworzył byka i byk był; a chłop wziął kozika, ... i stworzył wołu",
+      "answers": {
+        "a": "wyszedł z padołu",
+        "b": "jajca związał na bzika",
+        "c": "urżnął mu u dołu",
+        "d": "zgarnął go pod strzechę"
+      },
+      "correct": "c",
+      "image": "img/1.jpeg"
+    },
+         {
+      "title": "Przysłowie7",
+      "text": "Niejeden rekin sobie życzy, ... wiodła go na smyczy.",
+      "answers": {
+        "a": "by dorodna szprotka",
+        "b": "by ławica śledzi",
+        "c": "by piękna sardynka",
+        "d": "by syrena dziewictwem"
+      },
+      "correct": "a",
+      "image": "img/1.jpeg"
+    },
+         {
+      "title": "Przysłowie8",
+      "text": "Srał pies pod kotliną żółtą gliną ...",
+      "answers": {
+        "a": "",
+        "b": "wyrobioną przed dzieciną",
+        "c": "fajna bajka? Bujać ci ją?",
+        "d": "chodził po wsi i przeklinoł"
+      },
+      "correct": "c",
+      "image": "img/1.jpeg"
+    },
+         {
+      "title": "Przysłowie9",
+      "text": "jghjgh",
+      "answers": {
+        "a": "FR67",
+        "b": "MC1R",
+        "c": "CBR1",
+        "d": "RD91"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+         {
+      "title": "Przysłowie10",
+      "text": "jghjgh",
+      "answers": {
+        "a": "FR67",
+        "b": "MC1R",
+        "c": "CBR1",
+        "d": "RD91"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+    {
+      "title": "Przysłowie11",
+      "text": "jghjgh",
+      "answers": {
+        "a": "FR67",
+        "b": "MC1R",
+        "c": "CBR1",
+        "d": "RD91"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+    {
+      "title": "Przysłowie12",
+      "text": "jghjgh",
+      "answers": {
+        "a": "FR67",
+        "b": "MC1R",
+        "c": "CBR1",
+        "d": "RD91"
+      },
+      "correct": "b",
+      "image": "img/1.jpeg"
+    },
+]
+}
