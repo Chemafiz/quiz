@@ -145,5 +145,70 @@
       "blur_image": "img/blur11.jpg",
       "clear_image": "img/clear11.jpg"
     },
+    {
+      "title": "Pytanie 12",
+      "text": "Z kim Adi ma zdjęcie?",
+      "answers": {
+        "a": "łukasz luigi",
+        "b": "Kubson",
+        "c": "maatijas",
+        "d": "Szimon"
+      },
+      "correct": "c",
+      "blur_image": "img/blur12.jpg",
+      "clear_image": "img/clear12.jpg"
+    },
+    {
+      "title": "Pytanie 13",
+      "text": "Co to za legendarny trunek?",
+      "answers": {
+        "a": "Shogun o smaku wiśniowym",
+        "b": "Amarena o smaku wiśniowym",
+        "c": "Snajper o smaku wiśniowym",
+        "d": "Ocet jablkowy"
+      },
+      "correct": "c",
+      "blur_image": "img/blur13.jpg",
+      "clear_image": "img/clear13.jpg"
+    }, 
+    {
+      "title": "Pytanie 14",
+      "text": "Jakiemu klubowi piłkarskiemu kibicuje krasnal?",
+      "answers": {
+        "a": "Borussia Dortmund",
+        "b": "FC Barcelona",
+        "c": "Bayern Munchen",
+        "d": "Wisła Kraków"
+      },
+      "correct": "d",
+      "blur_image": "img/blur14.jpg",
+      "clear_image": "img/clear14.jpg"
+    },
+    {
+      "title": "Pytanie 15",
+      "text": "Ile tynku gipsowego maszynowego MP75 Knauf miał Kuba w pokoju",
+      "answers": {
+        "a": "120kg",
+        "b": "100kg",
+        "c": "48kg",
+        "d": "25kg"
+      },
+      "correct": "a",
+      "blur_image": "img/blur15.jpg",
+      "clear_image": "img/clear15.jpg"
+    },
+      {
+        "title": "Pytanie 16",
+        "text": "Z kim ma zdjęcie Natalia i Łukasz?",
+        "answers": {
+          "a": "Adi",
+          "b": "Franek",
+          "c": "Gorgoś",
+          "d": "Janek Stogniew"
+        },
+        "correct": "c",
+        "blur_image": "img/blur16.jpg",
+        "clear_image": "img/clear16.jpg"
+      }
   ]
 }

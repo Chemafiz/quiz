@@ -1,0 +1,214 @@
+{
+  "title": "Kto to powiedział",
+  "version": 1,
+  "questions": [
+    {
+      "title": "Kto to powiedział 1",
+      "text": "Kto brał udział w tej bystrej konwersacji?",
+      "answers": {
+        "a": "Szymon, Adi, Kuba.",
+        "b": "Francek, Mati, Kamil",
+        "c": "Adi, Natalia, Mati",
+        "d": "Mati, Szymon, Kamil"
+      },
+      "correct": "a",
+      "blur_image": "img/blur1.jpg",
+      "clear_image": "img/clear1.jpg"
+    },
+    {
+      "title": "Kto to powiedział 2",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Pszemo",
+        "b": "Adi",
+        "c": "Kamil",
+        "d": "Mati"
+      },
+      "correct": "a",
+      "blur_image": "img/blur2.jpg",
+      "clear_image": "img/clear2.jpg"
+    },
+    {
+      "title": "Kto to powiedział 3",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Łukasz",
+        "b": "Franek",
+        "c": "Adi",
+        "d": "Kamil"
+      },
+      "correct": "d",
+      "blur_image": "img/blur3.jpg",
+      "clear_image": "img/clear3.jpg"
+    },
+    {
+      "title": "Kto to powiedział 4",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Szymon",
+        "b": "Mati",
+        "c": "Kamil",
+        "d": "Natalia"
+      },
+      "correct": "c",
+      "blur_image": "img/blur4.jpg",
+      "clear_image": "img/clear4.jpg"
+    },
+    {
+      "title": "Kto to powiedział 5",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Francek",
+        "b": "Adi",
+        "c": "Szymon",
+        "d": "Mati"
+      },
+      "correct": "b",
+      "blur_image": "img/blur5.jpg",
+      "clear_image": "img/clear5.jpg"
+    },
+    {
+      "title": "Kto to powiedział 6",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Łukasz",
+        "b": "Kuba",
+        "c": "Szymon",
+        "d": "Natalia"
+      },
+      "correct": "d",
+      "blur_image": "img/blur6.jpg",
+      "clear_image": "img/clear6.jpg"
+    },
+    {
+      "title": "Kto to powiedział 7",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Kamil i Adi",
+        "b": "Kamil i Kuba",
+        "c": "Adi i Kuba",
+        "d": "Adi i Kamil"
+      },
+      "correct": "b",
+      "blur_image": "img/blur7.jpg",
+      "clear_image": "img/clear7.jpg"
+    },
+    {
+      "title": "Kto to powiedział 8",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Mati",
+        "b": "Jakub S.",
+        "c": "Szymon",
+        "d": "Kamil"
+      },
+      "correct": "c",
+      "blur_image": "img/blur8.jpg",
+      "clear_image": "img/clear8.jpg"
+    },
+    {
+      "title": "Kto to powiedział 9",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Mati",
+        "b": "Frank",
+        "c": "Szymon",
+        "d": "Kuba"
+      },
+      "correct": "b",
+      "blur_image": "img/blur9.jpg",
+      "clear_image": "img/clear9.jpg"
+    },
+    {
+      "title": "Kto to powiedział 10",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Kuba",
+        "b": "Kamil",
+        "c": "Szymon",
+        "d": "Franek"
+      },
+      "correct": "c",
+      "blur_image": "img/blur10.jpg",
+      "clear_image": "img/clear10.jpg"
+    },
+    {
+      "title": "Kto to powiedział 11",
+      "text": "Kto to powiedział?",
+      "answers": {
+        "a": "Szymon",
+        "b": "Kuba",
+        "c": "Majkel",
+        "d": "Natalia"
+      },
+      "correct": "d",
+      "blur_image": "img/blur11.jpg",
+      "clear_image": "img/clear11.jpg"
+    },
+    {
+      "title": "Kto to powiedział 12",
+      "text": "O kim mowa?",
+      "answers": {
+        "a": "Szymon Pilchsznyta",
+        "b": "Matijas do chlywka",
+        "c": "Kamil Ślimak sam o sobie",
+        "d": "Przemek pixar"
+      },
+      "correct": "b",
+      "blur_image": "img/blur12.jpg",
+      "clear_image": "img/clear12.jpg"
+    },
+    {
+      "title": "Kto to powiedział 13",
+      "text": "Kto się spłakał?",
+      "answers": {
+        "a": "Mati",
+        "b": "Jakub",
+        "c": "Kamil",
+        "d": "Franek"
+      },
+      "correct": "a",
+      "blur_image": "img/blur13.jpg",
+      "clear_image": "img/clear13.jpg"
+    },
+    {
+      "title": "Kto to powiedział 14",
+      "text": "Kto zrobił memika prima sort?",
+      "answers": {
+        "a": "Kamil",
+        "b": "Mati",
+        "c": "Adi",
+        "d": "Kuba"
+      },
+      "correct": "d",
+      "blur_image": "img/blur14.jpg",
+      "clear_image": "img/clear14.jpg"
+    },
+    {
+      "title": "Kto to powiedział 15",
+      "text": "Kto to taki?",
+      "answers": {
+        "a": "Adi i Mati",
+        "b": "Natalia i Kuba",
+        "c": "Szymon i Kamil",
+        "d": "Mati i Kamil"
+      },
+      "correct": "d",
+      "blur_image": "img/blur15.jpg",
+      "clear_image": "img/clear15.jpg"
+    },
+    {
+      "title": "Kto to powiedział 16",
+      "text": "Czyje to pismo?",
+      "answers": {
+        "a": "Adi",
+        "b": "Kamil",
+        "c": "Frank",
+        "d": "Kuba"
+      },
+      "correct": "d",
+      "blur_image": "img/blur16.jpg",
+      "clear_image": "img/clear16.jpg"
+    }
+  ]
+}

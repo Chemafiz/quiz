@@ -86,7 +86,7 @@
       "correct": "a",
       "image": "img/1.jpeg"
     },
-         {
+    {
       "title": "Przysłowie8",
       "text": "Srał pies pod kotliną żółtą gliną ...",
       "answers": {
@@ -97,54 +97,6 @@
       },
       "correct": "c",
       "image": "img/1.jpeg"
-    },
-         {
-      "title": "Przysłowie9",
-      "text": "jghjgh",
-      "answers": {
-        "a": "FR67",
-        "b": "MC1R",
-        "c": "CBR1",
-        "d": "RD91"
-      },
-      "correct": "b",
-      "image": "img/1.jpeg"
-    },
-         {
-      "title": "Przysłowie10",
-      "text": "jghjgh",
-      "answers": {
-        "a": "FR67",
-        "b": "MC1R",
-        "c": "CBR1",
-        "d": "RD91"
-      },
-      "correct": "b",
-      "image": "img/1.jpeg"
-    },
-    {
-      "title": "Przysłowie11",
-      "text": "jghjgh",
-      "answers": {
-        "a": "FR67",
-        "b": "MC1R",
-        "c": "CBR1",
-        "d": "RD91"
-      },
-      "correct": "b",
-      "image": "img/1.jpeg"
-    },
-    {
-      "title": "Przysłowie12",
-      "text": "jghjgh",
-      "answers": {
-        "a": "FR67",
-        "b": "MC1R",
-        "c": "CBR1",
-        "d": "RD91"
-      },
-      "correct": "b",
-      "image": "img/1.jpeg"
-    },
-]
+    }
+  ]
 }

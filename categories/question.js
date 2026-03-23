@@ -110,22 +110,12 @@ async function init(){
     img.onerror = () => { img.style.display = 'none'; };
     imgWrap.appendChild(img);
   }
-  const specialSlug = 'Co jest na zdjęciu';
-  const isBlurCategory = slug === specialSlug;
-  if(isBlurCategory){
-    let src = qt.blur_image || qt.image;
-    if(src){
-      if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
-        src = `./${slug}/${src}`;
-      }
-      const img = document.createElement('img');
-      img.className = 'q-img';
-      img.src = encodeURI(src);
-      img.onerror = () => { img.style.display = 'none'; };
-      imgWrap.appendChild(img);
-    }
-  } else if(qt.image){
-    let src = qt.image;
+
+  // Support categories that show a “hidden/blurred” image first and reveal the real one after answering.
+  // If `blur_image` and `clear_image` are provided, we show `blur_image` initially.
+  const hasBlurImage = Boolean(qt.blur_image && qt.clear_image);
+  let src = hasBlurImage ? qt.blur_image : qt.image;
+  if(src){
     if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
       src = `./${slug}/${src}`;
     }
@@ -160,7 +150,7 @@ async function init(){
           if(el2){ el2.classList.add('answered'); el2.classList.add('disabled'); }
         }
       }catch(e){}
-      if(isBlurCategory && qt.clear_image){
+      if(hasBlurImage && qt.clear_image){
         let src = qt.clear_image;
         if(!/^(?:[a-z]+:)?\/\//i.test(src) && !src.startsWith('/')){
           src = `./${slug}/${src}`;
