@@ -229,6 +229,79 @@
       },
       "correct": "b",
       "image": "img/19.jpg"
-    }
+    },
+    {
+      "title": "Pytanie20",
+      "text": "Które z poniższych nie jest małpą?",
+      "answers": {
+        "a": "Nosacz sundajski",
+        "b": "Mandryl barwnolicy",
+        "c": "Okapi leśne",
+        "d": "Langur hulman"
+      },
+      "correct": "c",
+      "image": "img/20.jpg"
+    }, 
+        {
+      "title": "Pytanie21",
+      "text": "Jaki typ pieca jest w domku w Kielcach?",
+      "answers": {
+        "a": "piec z podajnikiem",
+        "b": "piec gazowy kondensacyjny",
+        "c": "piec automatyczny pelletowy",
+        "d": "piec zasypowy"
+      },
+      "correct": "d",
+      "image": "img/21.jpg"
+    },
+    {
+      "title": "Pytanie22",
+      "text": "Jak nazywa się najpopularniejsza plaża nudystów w Europie?",
+      "answers": {
+        "a": "La Riviera Punta we Włoszech",
+        "b": "Aoiro Beach w Grecji",
+        "c": "Cap d’Agde we Francji",
+        "d": "Polirote Manga w Hiszpanii"
+      },
+      "correct": "c",
+      "image": "img/22.jpg"
+    },
+    {
+      "title": "Pytanie23",
+      "text": "Która grupa zawodowa najczęściej nadużywa alkoholu w Polsce?",
+      "answers": {
+        "a": "robotnicy w górnictwie i budownictwie",
+        "b": "twórcy, artyści, literaci i dziennikarze",
+        "c": "lekarze, weterynarze i dentyści",
+        "d": "pracownicy korporacji i banków"
+      },
+      "correct": "b",
+      "image": "img/23.jpg"
+    },
+    {
+      "title": "Pytanie24",
+      "text": "Ile wyniosła łączna produkcja jabłek w Polsce w 2023 roku?",
+      "answers": {
+        "a": "500 tys. ton",
+        "b": "1.2 mln ton",
+        "c": "3,8 mln ton",
+        "d": "10.5 mln ton"
+      },
+      "correct": "c",
+      "image": "img/24.jpg"
+    },
+    {
+      "title": "Pytanie25",
+      "text": "Która to stacja Drogi Krzyżowej",
+      "answers": {
+        "a": "Stacja III",
+        "b": "Stacja IV",
+        "c": "Stacja V",
+        "d": "Stacja VI"
+      },
+      "correct": "b",
+      "image": "img/25.jpg"
+    } 
+
   ]
 }
