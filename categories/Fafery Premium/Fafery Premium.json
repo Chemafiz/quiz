@@ -1,0 +1,294 @@
+{
+  "title": "Fafery Premium",
+  "version": 1,
+  "questions": [
+    {
+      "title": "Kuba1",
+      "text": "Jak ma na imię barber Kuby?",
+      "answers": {
+        "a": "Leonardo",
+        "b": "Luigi",
+        "c": "Mario",
+        "d": "Giovanni"
+      },
+      "correct": "c",
+      "image": "img/1.jpg"
+    },
+    {
+      "title": "Kuba2",
+      "text": "Jaki jest ulubiony sos na finish Kuby w Pizzatopii?",
+      "answers": {
+        "a": "Czosnkowy",
+        "b": "Suszone Pomidory",
+        "c": "BBQ",
+        "d": "Balsamiczny"
+      },
+      "correct": "c",
+      "image": "img/2.jpg"
+    },
+    {
+      "title": "Kuba3",
+      "text": "Jaka jest ulubiona popita Kuby na chlaniu?",
+      "answers": {
+        "a": "Woda gazowana",
+        "b": "Sok jabłkowy",
+        "c": "Sok pomarańczowy",
+        "d": "Sok porzeczkowy"
+      },
+      "correct": "b",
+      "image": "img/3.jpg"
+    },
+    {
+      "title": "Natalia1",
+      "text": "Jak nazywali sie  moi wymysleni przyjaciele w dziecinstwie?",
+      "answers": {
+        "a": "mirek i marek",
+        "b": "bubi i dudi",
+        "c": "krysia i tytus",
+        "d": "taciek i kulek"
+      },
+      "correct": "d",
+      "image": "img/4.jpg"
+    },
+    {
+      "title": "Natalia2",
+      "text": "jak nazywala sie moja pierwsza papuga?",
+      "answers": {
+        "a": "parotka",
+        "b": "paprotka",
+        "c": "tarotka",
+        "d": "karotka"
+      },
+      "correct": "d",
+      "image": "img/5.jpg"
+    },
+    {
+      "title": "Natalia3",
+      "text": "ktory tele tubis byl moj ulu?",
+      "answers": {
+        "a": "Laa-Laa",
+        "b": "Tinky-Winky",
+        "c": "Dipsy",
+        "d": "Po"
+      },
+      "correct": "a",
+      "image": "img/6.jpg"
+    },
+    {
+      "title": "Mati1",
+      "text": "Dlaczego nie lubię jeść ryb",
+      "answers": {
+        "a": "dostałem zgniłego fileta i wyjebałem go do wody",
+        "b": "widziałem jak ojciec zabija karpie",
+        "c": "zapach przygotowanej ryby powoduje we mnie wymioty",
+        "d": "nie lubię ości w rybach"
+      },
+      "correct": "a",
+      "image": "img/7.jpg"
+    },
+    {
+      "title": "Mati2",
+      "text": "Jaka była REALNA moja wartość rynkowa grając w LKS Raszczyce",
+      "answers": {
+        "a": "300 zł",
+        "b": "0 zł",
+        "c": "1000 zł",
+        "d": "5000 zł"
+      },
+      "correct": "a",
+      "image": "img/8.jpg"
+    },
+    {
+      "title": "Mati3",
+      "text": "Dlaczego policja zabrała mi komputer w wieku 12 lat",
+      "answers": {
+        "a": "posiadanie nielegalnych pornoli",
+        "b": "posiadanie nielegalnego Windowsa",
+        "c": "piracenie gier",
+        "d": "kontakt z przestępczym półświatkiem"
+      },
+      "correct": "d",
+      "image": "img/9.jpg"
+    },
+    {
+      "title": "Franek1",
+      "text": "Ile godzin swojego życia spędził Franciszek na koncie 'mougron' eune w grze - Liga Legend",
+      "answers": {
+        "a": "2968",
+        "b": "3743",
+        "c": "4256",
+        "d": "5122"
+      },
+      "correct": "d",
+      "image": "img/10.jpg"
+    },
+    {
+      "title": "Franek2",
+      "text": "Ile centymetrów ma prawa stopa od francka (łącznie z palcami)",
+      "answers": {
+        "a": "26,1",
+        "b": "28,4",
+        "c": "29",
+        "d": "33,3"
+      },
+      "correct": "a",
+      "image": "img/11.jpg"
+    },
+    {
+      "title": "Franek3",
+      "text": "W słynnej opowieści  Franciszka Libery, dość szybko pojawia się postać 'Mougron' wymyślona przez 9-letniego Franka, od postaci tej potem wziął się ten sam nick. Kim w tej opowieści jest (i zawsze był) Mougron?",
+      "answers": {
+        "a": "Piratem-Człowiekiem",
+        "b": "Bogiem Czasu",
+        "c": "Robotem-Wyrzutkiem",
+        "d": "Prastarym Żywiołakiem"
+      },
+      "correct": "c",
+      "image": "img/12.jpg"
+    },
+    {
+      "title": "Szymon1",
+      "text": "Jaki jest mój ulubiony rodzaj pizzy?",
+      "answers": {
+        "a": "Pepperoni",
+        "b": "Margherita",
+        "c": "Hawajska",
+        "d": "Wegetariańska"
+      },
+      "correct": "a",
+      "image": "img/13.jpg"
+    },
+    {
+      "title": "Szymon2",
+      "text": "Jaki jest mój ulubiony gatunek muzyczny?",
+      "answers": {
+        "a": "Rock",
+        "b": "Pop",
+        "c": "Hip-hop",
+        "d": "Elektroniczna"
+      },
+      "correct": "c",
+      "image": "img/14.jpg"
+    },
+    {
+      "title": "Szymon3",
+      "text": "Jaki jest mój ulubiony sport?",
+      "answers": {
+        "a": "Piłka nożna",
+        "b": "Koszykówka",
+        "c": "Tenis",
+        "d": "Siatkówka"
+      },
+      "correct": "b",
+      "image": "img/15.jpg"
+    },
+    {
+      "title": "Łukasz1",
+      "text": "Jaki jest mój ulubiony film?",
+      "answers": {
+        "a": "Incepcja",
+        "b": "Matrix",
+        "c": "Pulp Fiction",
+        "d": "Forrest Gump"
+      },
+      "correct": "b",
+      "image": "img/16.jpg"
+    },
+    {
+      "title": "Łukasz2",
+      "text": "Jaki jest mój ulubiony serial?",
+      "answers": {
+        "a": "Breaking Bad",
+        "b": "Gra o Tron",
+        "c": "Stranger Things",
+        "d": "The Office"
+      },
+      "correct": "a",
+      "image": "img/17.jpg"
+    },
+    {
+      "title": "Łukasz3",
+      "text": "Jaki jest mój ulubiony zespół muzyczny?",
+      "answers": {
+        "a": "The Beatles",
+        "b": "Queen",
+        "c": "Nirvana",
+        "d": "Red Hot Chili Peppers"
+      },
+      "correct": "c",
+      "image": "img/18.jpg"
+    },
+    {
+      "title": "Kamil1",
+      "text": "Jaki model teleskopu ma Kamil",
+      "answers": {
+        "a": "GSO 12'' f/5",
+        "b": "Celestron NexStar 8SE",
+        "c": "Williams Optics 200mm f/6",
+        "d": "Sky Watcher 8'' Dobson"
+      },
+      "correct": "d",
+      "image": "img/19.jpg"
+    },
+    {
+      "title": "Kamil2",
+      "text": "Jaką kamerkę astronomiczną zajebaliśmy Kamil i ja z Mechana",
+      "answers": {
+        "a": "ASI 533 MC Pro Color",
+        "b": "Explore Scientific Deep Sky Astro 26MP",
+        "c": "DMK 41AU02.AS Monochrome Camera",
+        "d": "Svbony SV105C IMX307 USB 2.0"
+      },
+      "correct": "c",
+      "image": "img/20.jpg"
+    },
+    {
+      "title": "Kamil3",
+      "text": "W czym Kamil jest ekspertem jeśli chodzi o IT?",
+      "answers": {
+        "a": "FPGA",
+        "b": "C++",
+        "c": "Tenis",
+        "d": "Algorytmy Genetyczne"
+      },
+      "correct": "a",
+      "image": "img/21.jpg"
+    },
+    {
+      "title": "Pszemo1",
+      "text": "Czego NIE zrobiłem?",
+      "answers": {
+        "a": "Zesrałem się w spodnie po spadnięciu z rusztowania i wylądowaniu w wiadrze z wodą",
+        "b": "Zarzygałęm pół pokoju w Boże Narodzenie po pasterce",
+        "c": "Nasikałem do kosza na śmieci w szatni w szkole podstawowej",
+        "d": "Wsypałem sproszkowaną kredę do kawy babce z historii i zrobił się gips"
+      },
+      "correct": "d",
+      "image": "img/22.jpg"
+     },
+    {
+      "title": "Pszemo2",
+      "text": "W jakiej grupie teatralnej (w sumie to dosyć popularnej tbh) grałem w podstawówce?",
+      "answers": {
+        "a": "Teatr Zapałka",
+        "b": "Krzanowickie Opy",
+        "c": "Grupa Apollo",
+        "d": "Peczacin"
+      },
+      "correct": "b",
+      "image": "img/23.jpg"
+     },
+     {
+      "title": "Pszemo3",
+      "text": "Jaką mój Opa dał mi najważniejszą radę?",
+      "answers": {
+        "a": "Pierdnij se, a zesraj se",
+        "b": "Po co bąka trzymać w dupie, niech se lata po chałupie",
+        "c": "To nie Żory, tu trza jebać",
+        "d": "Jebnij karpia pod skrzelami to się uspokoi"
+      },
+      "correct": "d",
+      "image": "img/24.jpg"
+     }
+  ]
+}
