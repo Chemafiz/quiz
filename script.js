@@ -7,6 +7,16 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 let participants = []; // local cache
 let categories = [];
+let pointsCache = {}; // przechowywanie punktów w localStorage
+
+function loadPointsCache() {
+  try { pointsCache = JSON.parse(localStorage.getItem('pointsCache') || '{}'); }
+  catch(e) { pointsCache = {}; }
+}
+
+function savePointsCache() {
+  localStorage.setItem('pointsCache', JSON.stringify(pointsCache));
+}
 
 // === UI SELECTORS ===
 const participantsTableBody = document.querySelector('#participants-table tbody');
@@ -14,28 +24,20 @@ const categoryGrid = document.getElementById('category-grid');
 const deleteAllBtn = document.getElementById('delete-all');
 
 // === HELPERS ===
-function loadParticipantsLocal() {
-  try { return JSON.parse(localStorage.getItem('participants') || '[]'); }
-  catch(e) { return []; }
-}
-
-function saveParticipantsLocal(list) {
-  localStorage.setItem('participants', JSON.stringify(list));
-}
-
 function renderParticipants() {
-  const localList = loadParticipantsLocal();
+  // Sortuj po punktach malejąco
+  let sorted = [...participants].sort((a, b) => (pointsCache[b.id] || 0) - (pointsCache[a.id] || 0));
   participantsTableBody.innerHTML = '';
-  const maxPoints = Math.max(1, ...localList.map(p => p.points || 0));
+  const maxPoints = Math.max(1, ...sorted.map(p => pointsCache[p.id] || 0));
 
-  localList.forEach((p, idx) => {
+  sorted.forEach((p) => {
     const tr = document.createElement('tr');
 
     const tdAvatar = document.createElement('td');
     const img = document.createElement('img');
     img.src = p.avatar_url;
-    img.style.width = "32px";
-    img.style.height = "32px";
+    img.style.width = "100px";
+    img.style.height = "100px";
     img.style.borderRadius = "50%";
     tdAvatar.appendChild(img);
 
@@ -44,12 +46,11 @@ function renderParticipants() {
 
     const tdPoints = document.createElement('td');
     tdPoints.contentEditable = true;
-    tdPoints.textContent = p.points || 0;
-    tdPoints.addEventListener('blur', () => {
-      p.points = parseInt(tdPoints.textContent) || 0;
-      const list = loadParticipantsLocal();
-      list[idx] = p;
-      saveParticipantsLocal(list);
+    tdPoints.textContent = pointsCache[p.id] || 0;
+    tdPoints.addEventListener('blur', async () => {
+      const newPoints = parseInt(tdPoints.textContent) || 0;
+      pointsCache[p.id] = newPoints;
+      savePointsCache();
       renderParticipants();
     });
 
@@ -58,12 +59,12 @@ function renderParticipants() {
     barWrap.className = 'bar-wrap';
     const bar = document.createElement('div');
     bar.className = 'bar';
-    const pct = Math.round(((p.points || 0)/maxPoints)*100);
+    const pct = Math.round(((pointsCache[p.id] || 0)/maxPoints)*100);
     bar.style.width = pct + '%';
     barWrap.appendChild(bar);
     const label = document.createElement('span');
     label.className = 'bar-label';
-    label.textContent = (p.points || 0) + ' pts';
+    label.textContent = (pointsCache[p.id] || 0) + ' pts';
     tdBar.appendChild(barWrap);
     tdBar.appendChild(label);
 
@@ -72,14 +73,30 @@ function renderParticipants() {
     const dec = document.createElement('button'); dec.textContent = '-'; dec.className='btn-dec';
     const del = document.createElement('button'); del.textContent = 'Usuń'; del.className='btn-del';
 
-    inc.addEventListener('click', () => { p.points = (p.points || 0) + 1; const list = loadParticipantsLocal(); list[idx]=p; saveParticipantsLocal(list); renderParticipants(); });
-    dec.addEventListener('click', () => { p.points = (p.points || 0) - 1; const list = loadParticipantsLocal(); list[idx]=p; saveParticipantsLocal(list); renderParticipants(); });
+    inc.addEventListener('click', async () => { 
+      pointsCache[p.id] = (pointsCache[p.id] || 0) + 1;
+      savePointsCache();
+      renderParticipants();
+    });
+    dec.addEventListener('click', async () => { 
+      pointsCache[p.id] = (pointsCache[p.id] || 0) - 1;
+      savePointsCache();
+      renderParticipants();
+    });
     del.addEventListener('click', async () => {
-      const list = loadParticipantsLocal();
-      list.splice(idx, 1);
-      saveParticipantsLocal(list);
-      // usuń z supabase
-      await supabase.from('participants').delete().eq('name', p.name).eq('avatar_url', p.avatar_url);
+      if(!confirm(`Na pewno usunąć uczestnika ${p.name}?`)) return;
+      console.log('Próba usunięcia uczestnika id=', p.id, p.name);
+      const { data, error } = await supabase.from('participants').delete().match({ id: p.id });
+      if(error) {
+        console.error('Błąd usuwania uczestnika w Supabase:', error);
+        alert('Błąd usuwania: ' + (error.message || 'sprawdź konsolę'));
+        return;
+      }
+      console.log('Usunięto z supabase:', data);
+      // Usuń lokalnie z pamięci i cache punktów
+      participants = participants.filter(u => u.id !== p.id);
+      delete pointsCache[p.id];
+      savePointsCache();
       renderParticipants();
     });
 
@@ -119,8 +136,8 @@ function renderCategories() {
 async function fetchParticipants() {
   const { data, error } = await supabase.from('participants').select('*');
   if(error) { console.error(error); return; }
-  participants = data.map(u => ({ ...u, points: 0 })); // reset points locally
-  saveParticipantsLocal(participants);
+  participants = data || [];
+  loadPointsCache();
   renderParticipants();
 }
 
@@ -128,14 +145,14 @@ async function fetchParticipants() {
 if(deleteAllBtn){
   deleteAllBtn.addEventListener('click', async () => {
     if(!confirm('Na pewno usunąć wszystkich uczestników?')) return;
-    await supabase.from('participants').delete();
-    saveParticipantsLocal([]);
-    renderParticipants();
+    await supabase.from('participants').delete().neq('id', '');
+    await fetchParticipants();
   });
 }
 
 // === INITIALIZE ===
 (async function(){
+  loadPointsCache();
   await loadCategoryList();
   await fetchParticipants();
 })();
