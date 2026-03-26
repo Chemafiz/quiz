@@ -3,9 +3,12 @@
   "version": 1,
   "questions": [
     { "title": "Geoguesser" },
-    { "title": "Zrób performance, my ocenimy" },
+    { "title": "Zrób performance" },
     { "title": "Kamień, papier, nożyce do trzech" },
-    { "title": "Pocałuj dłoń osoby obok" },
-    { "title": "Ściągnij jedną część ubrania (śmieszne zadanie)" }
+    { "title": "Achtung die curve" },
+    { "title": "Czółko" },
+    { "title": "Pomidor" },
+    { "title": "Kalambury" },
+    {"title": "Zamiana imion" }
   ]
 }

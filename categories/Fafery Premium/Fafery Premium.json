@@ -148,74 +148,74 @@
     },
     {
       "title": "Szymon1",
-      "text": "Jaki jest mój ulubiony rodzaj pizzy?",
+      "text": "Jak nazywał się mój pierwszy kot?",
       "answers": {
-        "a": "Pepperoni",
-        "b": "Margherita",
-        "c": "Hawajska",
-        "d": "Wegetariańska"
+        "a": "Kulka",
+        "b": "Julka",
+        "c": "Elin",
+        "d": "Kutas"
       },
-      "correct": "a",
+      "correct": "b",
       "image": "img/13.jpg"
     },
     {
       "title": "Szymon2",
-      "text": "Jaki jest mój ulubiony gatunek muzyczny?",
+      "text": "Ile najwięcej wyświetleń osiągnął filmik który zmontowałem, I został on udostępniony na platformie YouTube?",
       "answers": {
-        "a": "Rock",
-        "b": "Pop",
-        "c": "Hip-hop",
-        "d": "Elektroniczna"
+        "a": "139 732 wyświetlenia",
+        "b": "114 wyświetleń",
+        "c": "58 075 wyświetleń",
+        "d": "181 wyświetleń"
       },
-      "correct": "c",
+      "correct": "a",
       "image": "img/14.jpg"
     },
     {
       "title": "Szymon3",
-      "text": "Jaki jest mój ulubiony sport?",
+      "text": "Kim chciałem zostać jak byłem mały?",
       "answers": {
-        "a": "Piłka nożna",
-        "b": "Koszykówka",
-        "c": "Tenis",
-        "d": "Siatkówka"
+        "a": "Informatykiem",
+        "b": "Kucharzem",
+        "c": "Weterynarzem",
+        "d": "YouTuberem"
       },
-      "correct": "b",
+      "correct": "c",
       "image": "img/15.jpg"
     },
     {
       "title": "Łukasz1",
-      "text": "Jaki jest mój ulubiony film?",
+      "text": "Ile miałem rybek o imieniu Fiszu, i ile z nich zdechło za moją przyczyną?",
       "answers": {
-        "a": "Incepcja",
-        "b": "Matrix",
-        "c": "Pulp Fiction",
-        "d": "Forrest Gump"
+        "a": "3, 0",
+        "b": "4, 2",
+        "c": "1, 1",
+        "d": "3, 2"
       },
-      "correct": "b",
+      "correct": "a",
       "image": "img/16.jpg"
     },
     {
       "title": "Łukasz2",
-      "text": "Jaki jest mój ulubiony serial?",
+      "text": "Na koncert jakiego zespołu umówiłem się z dziewczyną w Warszawie w 2023, a potem wgl nie przyjechałem?",
       "answers": {
-        "a": "Breaking Bad",
-        "b": "Gra o Tron",
-        "c": "Stranger Things",
-        "d": "The Office"
+        "a": "Łydka grubasa",
+        "b": "Arctic monkeys",
+        "c": "Alt j",
+        "d": "Metronomy"
       },
-      "correct": "a",
+      "correct": "c",
       "image": "img/17.jpg"
     },
     {
       "title": "Łukasz3",
-      "text": "Jaki jest mój ulubiony zespół muzyczny?",
+      "text": "Jakie jest najgorsze powikłanie które dotychczas wywołałem u pacjenta?",
       "answers": {
-        "a": "The Beatles",
-        "b": "Queen",
-        "c": "Nirvana",
-        "d": "Red Hot Chili Peppers"
+        "a": "Udar niedokrwienny mózgu",
+        "b": "Zakażenie szytej rany",
+        "c": "Psychoza po podaniu leku",
+        "d": "Krwotok z cewki moczowej"
       },
-      "correct": "c",
+      "correct": "d",
       "image": "img/18.jpg"
     },
     {
