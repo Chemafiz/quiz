@@ -289,6 +289,42 @@
       },
       "correct": "d",
       "image": "img/24.jpg"
+     },
+     {
+      "title": "Adi1",
+      "text": "Której z tych rzeczy nie zrobiłem:",
+      "answers": {
+        "a": "zesrałem się do auta przez szyberdach",
+        "b": "naszczałem na ścianę przy łóżku w środku nocy",
+        "c": "poradziłem ziomkowi wsadzić zapalonego szluga w fiuta (zrobił to)",
+        "d": "zesrałem się w gacie podczas służby"
+      },
+      "correct": "a",
+      "image": "img/24.jpg"
+     },
+     {
+      "title": "Adi2",
+      "text": "Którą z tych rzeczy zrobiłem:",
+      "answers": {
+        "a": "złamałem sobie końcówkę wstając z kibla",
+        "b": "podpaliłem pole na ocicach",
+        "c": "dałem dziecku butelkę coli zmieszanej z sikami",
+        "d": "trafiłem przypadkiem kolegę z procy i się porzygał"
+      },
+      "correct": "c",
+      "image": "img/24.jpg"
+     },
+     {
+      "title": "Adi3",
+      "text": "Ile razy byłem na pogotowiu (z własnym problemem)",
+      "answers": {
+        "a": "0",
+        "b": "1",
+        "c": "2",
+        "d": "więcej niż 2"
+      },
+      "correct": "c",
+      "image": "img/24.jpg" 
      }
   ]
 }
