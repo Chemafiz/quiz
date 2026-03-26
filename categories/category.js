@@ -49,7 +49,7 @@ async function init(){
     link.className = 'q-card';
     // For special categories, hide real task text and show generic labels
     if(slug === '1vs1') link.textContent = `zadanie${idx+1}`;
-    else if(slug === 'licytacje') link.textContent = `licytacja${idx+1}`;
+    else if(slug.toLowerCase() === 'licytacje') link.textContent = `Licytacja ${idx+1}`;
     else link.textContent = qt.title || `Pytanie ${idx+1}`;
     link.href = `question.html?slug=${encodeURIComponent(slug)}&q=${idx}`;
     // store q index and slug on the element for reliable matching
